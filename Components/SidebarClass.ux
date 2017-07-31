@@ -1,0 +1,20 @@
+<StackPanel ux:Class="SidebarClass" ux:Name="sidebar" Edge="Left" Width="100%" Margin="0,0,56,0" Background="#6b008b">
+			<Shadow ux:Name="shadow" Angle="180" Distance="8" Size="16" Color="#0000" />
+			<Text Font="FontAwesome" Color="#ffffff" FontSize="30" TextAlignment="Center" Dock="Top" Margin="0,50" > &#xf02a; QRty </Text>	
+			<Rectangle Height="1" Color="#ffffff"/>
+			
+			
+			<StackPanel Orientation="Horizontal" Padding="20">
+			<Text Font="FontAwesome" Value="&#xf041;" Margin="0,0,6,0" Color="#ffffff"/>
+			<Text Color="White">QR Kod Yarat</Text>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal" Padding="20">
+			<Text Font="FontAwesome" Value="&#xf029;" Margin="0,0,6,0" Color="#ffffff"/>
+			<Text Color="White">QR Kod Okut</Text>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal" Padding="20">
+			<Text Font="FontAwesome" Value="&#xf003;" Margin="0,0,6,0" Color="#ffffff"/>
+			<Text Color="White">Bize Ulaşın</Text>
+			</StackPanel>
+			</StackPanel>
+

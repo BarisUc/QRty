@@ -1,0 +1,11 @@
+<Page ux:Class="HomePage">
+<Router ux:Dependency="router" />
+
+	<NativeViewHost>
+			<MapView Latitude="59.911567" Longitude="10.741030" Zoom="10">
+				<MapMarker Latitude="59.911567" Longitude="10.741030" Label="Fuse HQ"/>
+			</MapView>
+		</NativeViewHost>
+	
+
+</Page>
