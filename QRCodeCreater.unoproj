@@ -3,11 +3,15 @@
   "Packages": [
   "Fuse.Maps",
     "Fuse",
-    "FuseJS"
+    "FuseJS",
+    "Fuse.GeoLocation"
   ],
   "Includes": [
     "*",
     
 
-  ]
+  ],
+  "Geo": {
+      "ApiKey": "AIzaSyDuTAgz2xrcbySdAx8tgTzxUwy2fu34eJM"
+  }
 }

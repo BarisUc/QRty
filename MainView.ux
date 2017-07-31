@@ -4,37 +4,38 @@
 	<Font File="./Fonts/fontawesome-webfont.ttf" ux:Global="FontAwesome" />
 	<Router ux:Name="router" />
 
-		<EdgeNavigator>
+		<NativeViewHost>
+			<EdgeNavigator>
 
-			<SidebarClass ux:Name="sidebar" />
-			<DockPanel Color="#ffffff">
-				
-				<Grid Columns="50,1*,50" Dock="Top" Color="#8b008b">
-					<Shadow Size="3" Distance="1" />
-						<Panel Height="50">
-							<HamburgerMenu Alignment="Left">
-								<Clicked>
-									<NavigateToggle Target="sidebar" />
-								</Clicked>
-							</HamburgerMenu>
-						</Panel>
+				<SidebarClass ux:Name="sidebar" />
+					<ClientPanel Dock="Top" Color="#8b008b">
 
-						<Panel Width="100%" Height="50">
-							<Text Font="FontAwesome" Color="White" FontSize="30" TextAlignment="Center" Margin="10" Alignment="Center"> &#xf02a; QRty </Text>
-						</Panel>
+						<DockPanel Color="#ffffff">
 
-				</Grid>
+			                    <Grid Columns="50,1*,50" Dock="Top" Width="100%" Height="50" Padding="0,0,0,10" Color="#8b008b">
 
+			                            <Panel Height="50">
+			                                <HamburgerMenu Alignment="Left">
+			                                    <Clicked>
+			                                        <NavigateToggle Target="sidebar" />
+			                                    </Clicked>
+			                                </HamburgerMenu>
+			                            </Panel>
 
-			<ClientPanel Dock="Top">
-				<Navigator DefaultPath="home">
-					<HomePage ux:Template="home" router="router" />
-				</Navigator>
-			</ClientPanel>
-		</DockPanel>
+			                            <Panel Width="100%" Height="50">
+			                                <Text Font="FontAwesome" Color="White" FontSize="30" TextAlignment="Center" Margin="10" Alignment="Center"> &#xf02a; QRty </Text>
+			                            </Panel>
+			                    </Grid>
 
 
-		</EdgeNavigator>
+								<Navigator DefaultPath="home">
+									<HomePage ux:Template="home" router="router" />
+								</Navigator>
+						</DockPanel>
+					</ClientPanel>
+
+			</EdgeNavigator>
+		</NativeViewHost>
 
 	
 </App>

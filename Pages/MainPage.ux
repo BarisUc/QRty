@@ -1,11 +1,40 @@
 <Page ux:Class="HomePage">
+<JavaScript File="MainPage.js" />
 <Router ux:Dependency="router" />
+	<StackPanel Dock="Top">
+	    <DockPanel Height="200">
 
-	<NativeViewHost>
-			<MapView Latitude="59.911567" Longitude="10.741030" Zoom="10">
-				<MapMarker Latitude="59.911567" Longitude="10.741030" Label="Fuse HQ"/>
-			</MapView>
-		</NativeViewHost>
-	
+				<MapView Height="100%" Latitude="{timeoutLocation.latitude}" Longitude="{timeoutLocation.longitude}" Zoom="10">
+					<MapMarker Latitude="{timeoutLocation.latitude}" Longitude="{timeoutLocation.longitude}" Label="Konumunuz"/>
+				</MapView>
+
+		</DockPanel>
+		<Text>Konumumu Seç</Text>
+		<Text>Konumumu Sedededç</Text>
+		<Text> Sededeç</Text>
+		<Text>Konumumu Seedeç</Text>
+		<Text>Konumumu Seç</Text>
+		<Text> Sedededç</Text>
+		<Text>Konumumu Sededeç</Text>
+		<Text>Konumumu Seedeç</Text>
+		<Text> Seç</Text>
+		<Text>Konumumu Sedededç</Text>
+		<Text>Konumumu Sededeç</Text>
+		<Text>Konumumu Seedeç</Text>
+		<Text> Seç</Text>
+		<Text>Konumumu Sedededç</Text>
+		<Text> Sededeç</Text>
+		<Text>Konumumu Seedeç</Text>
+		<Text>Konumumu Seç</Text>
+		<Text> Sedededç</Text>
+		<Text>Konumumu Sededeç</Text>
+		<Text>Konumumu Seedeç</Text>
+		<Text> Seç</Text>
+		<Text> Sedededç</Text>
+		<Text> Sededeç</Text>
+		<Text>Konumumu Seedeç</Text>
+	</StackPanel>
+
+
 
 </Page>
