@@ -1,38 +1,38 @@
-<Page ux:Class="HomePage">
+<Page ux:Class="MainPage">
 <JavaScript File="MainPage.js" />
+<Qreader ux:Global="Qreader" />
 <Router ux:Dependency="router" />
 	<StackPanel Dock="Top">
-	    <DockPanel Height="200">
-
-				<MapView Height="100%" Latitude="{timeoutLocation.latitude}" Longitude="{timeoutLocation.longitude}" Zoom="10">
-					<MapMarker Latitude="{timeoutLocation.latitude}" Longitude="{timeoutLocation.longitude}" Label="Konumunuz"/>
+		<Text Margin="0,10,0,0" Alignment="Center"> Barkodunu Almak İstediğiniz Konumu Seçin </Text>
+	    <DockPanel Margin="0,10,0,0" Height="300" Width="200">
+	    	
+				<MapView Height="100%" ux:Name="Map" Latitude="{timeoutLocation.latitude}" LocationLongPressed="{onLongPress}" Longitude="{timeoutLocation.longitude}" Zoom="10">
 				</MapView>
+			
 
 		</DockPanel>
-		<Text>Konumumu Seç</Text>
-		<Text>Konumumu Sedededç</Text>
-		<Text> Sededeç</Text>
-		<Text>Konumumu Seedeç</Text>
-		<Text>Konumumu Seç</Text>
-		<Text> Sedededç</Text>
-		<Text>Konumumu Sededeç</Text>
-		<Text>Konumumu Seedeç</Text>
-		<Text> Seç</Text>
-		<Text>Konumumu Sedededç</Text>
-		<Text>Konumumu Sededeç</Text>
-		<Text>Konumumu Seedeç</Text>
-		<Text> Seç</Text>
-		<Text>Konumumu Sedededç</Text>
-		<Text> Sededeç</Text>
-		<Text>Konumumu Seedeç</Text>
-		<Text>Konumumu Seç</Text>
-		<Text> Sedededç</Text>
-		<Text>Konumumu Sededeç</Text>
-		<Text>Konumumu Seedeç</Text>
-		<Text> Seç</Text>
-		<Text> Sedededç</Text>
-		<Text> Sededeç</Text>
-		<Text>Konumumu Seedeç</Text>
+		<Text ux:Name="QRReady" Alignment="Center" Value="Barkodunuz"></Text>
+		<DockPanel Margin="5" Alignment="BottomCenter">
+		<Image Height="100" Width="100" Url="{url}" />
+		<Rectangle Height="100" Width="100" Color="#000000" CornerRadius="0" />
+
+		</DockPanel>
+		
+		<Text ux:Name="VisibleText" Alignment="Center" Value="Barkodu Kaydet" >
+			<WhilePressed>
+				<Scale Factor=".95" Duration=".08" Easing="QuadraticOut" />
+			</WhilePressed>
+			
+		</Text>
+
+		
+    <Button Margin="10" Text="Launch Maps">
+        <Clicked>
+            <LaunchMaps Latitude="{CatchLocation.latitude}" Longitude="{CatchLocation.longitude}" />
+        </Clicked>
+    </Button>
+
+			
 	</StackPanel>
 
 

@@ -1,0 +1,24 @@
+{
+  "RootNamespace":"",
+  "Packages": [
+  "Fuse.Maps",
+    "Fuse",
+    "FuseJS",
+    "Fuse.GeoLocation",
+    "Fuse.Launcher"
+    
+  ],
+  "Includes": [
+    "*",
+    
+    
+  ],
+  "Projects": [
+    "../qr-reader/fuse-qreader.unoproj",
+  ],
+   "Android": {
+ 	 "Geo": {
+   	   "ApiKey": "AIzaSyDuTAgz2xrcbySdAx8tgTzxUwy2fu34eJM"
+  	}
+	}
+}

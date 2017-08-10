@@ -1,0 +1,36 @@
+<Page ux:Class="ScanPage">
+	<Router ux:Dependency="router" />
+
+<JavaScript File="ScanPage.js" />
+<Qreader ux:Global="Qreader" />
+	<StackPanel Dock="Top">
+	    <Text Value="{result}" Color="Black"/>
+		
+			<Rectangle Layer="Background" Color="#6b008b" Alignment="Top" Margin="20" CornerRadius="4" Width="100" Height="50" Clicked="{readQr}">
+		<DropShadow Angle="90" Distance="1" Spread="0.2" Size="2" Color="#00000060" />
+	
+			
+			<Text Value="Scan" Color="White" Alignment="Center">
+				
+			</Text>
+		</Rectangle>
+		<WhilePressed>
+					<Scale Factor=".98" Duration=".08" Easing="QuadraticOut" />
+		</WhilePressed>
+
+
+
+
+	</StackPanel>
+<Panel Alignment="Center">
+ <Text Margin="10" Value="Launch Maps">
+
+        <Clicked>
+            <LaunchMaps Latitude="{result.latitude}" Longitude="{result.longitude}" />
+        </Clicked>
+    </Text>
+ <WhilePressed>
+					<Scale Factor=".98" Duration=".08" Easing="QuadraticOut" />
+		</WhilePressed>
+</Panel>
+</Page>

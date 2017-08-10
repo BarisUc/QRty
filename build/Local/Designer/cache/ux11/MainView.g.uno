@@ -6,7 +6,7 @@ public partial class MainView: Fuse.App
     {
         [Uno.WeakReference] internal readonly MainView __parent;
         [Uno.WeakReference] internal readonly MainView __parentInstance;
-        public Template(MainView parent, MainView parentInstance): base("home", false)
+        public Template(MainView parent, MainView parentInstance): base("App", false)
         {
             __parent = parent;
             __parentInstance = parentInstance;
@@ -16,15 +16,14 @@ public partial class MainView: Fuse.App
         }
         public override object New()
         {
-            var __self = new global::HomePage(__parent.router);
+            var __self = new global::AppPage(__parent.router);
             __self.Name = __selector0;
             return __self;
         }
-        static global::Uno.UX.Selector __selector0 = "home";
+        static global::Uno.UX.Selector __selector0 = "App";
     }
     [global::Uno.UX.UXGlobalResource("FontAwesome")] public static readonly Fuse.Font FontAwesome;
     internal global::Fuse.Navigation.Router router;
-    internal global::SidebarClass sidebar;
     static MainView()
     {
         global::Uno.UX.Resource.SetGlobalKey(global::Fuse.Animations.Easing.Linear, "Linear");
@@ -135,6 +134,8 @@ public partial class MainView: Fuse.App
         global::Uno.UX.Resource.SetGlobalKey(global::Fuse.TranslationModes.Width, "Width");
         global::Uno.UX.Resource.SetGlobalKey(global::Fuse.TranslationModes.Height, "Height");
         global::Uno.UX.Resource.SetGlobalKey(global::MainView.FontAwesome, "FontAwesome");
+        global::Uno.UX.Resource.SetGlobalKey(global::MainPage.Qreader, "Qreader");
+        global::Uno.UX.Resource.SetGlobalKey(global::ScanPage.Qreader, "Qreader");
         FontAwesome = new global::Fuse.Font(new global::Uno.UX.BundleFileSource(import global::Uno.IO.BundleFile("../../../../../Fonts/fontawesome-webfont.ttf")));
         global::Uno.UX.Resource.SetGlobalKey(FontAwesome, "FontAwesome");
     }
@@ -148,81 +149,40 @@ public partial class MainView: Fuse.App
         var temp = new global::Fuse.Reactive.FuseJS.DiagnosticsImplModule();
         var temp1 = new global::Fuse.Reactive.FuseJS.Http();
         var temp2 = new global::Fuse.Reactive.FuseJS.TimerModule();
-        var temp3 = new global::Fuse.Drawing.BrushConverter();
-        var temp4 = new global::Fuse.Triggers.BusyTaskModule();
-        var temp5 = new global::Fuse.Testing.UnoTestingHelper();
-        var temp6 = new global::Fuse.FileSystem.FileSystemModule();
-        var temp7 = new global::Fuse.Storage.StorageModule();
-        var temp8 = new global::Fuse.ImageTools.ImageTools();
-        var temp9 = new global::Fuse.WebSocket.WebSocketClientModule();
-        var temp10 = new global::Fuse.GeoLocation.GeoLocation();
-        var temp11 = new global::Polyfills.Window.WindowModule();
-        var temp12 = new global::FuseJS.Globals();
-        var temp13 = new global::FuseJS.Lifecycle();
-        var temp14 = new global::FuseJS.Environment();
-        var temp15 = new global::FuseJS.Base64();
-        var temp16 = new global::FuseJS.Bundle();
-        var temp17 = new global::FuseJS.FileReaderImpl();
-        var temp18 = new global::FuseJS.UserEvents();
-        var temp19 = new global::Fuse.iOS.StatusBarConfig();
-        var temp20 = new global::Fuse.Android.StatusBarConfig();
+        var temp3 = new global::Fuse.Reactive.FuseJS.Email();
+        var temp4 = new global::Fuse.Reactive.FuseJS.InterApp();
+        var temp5 = new global::Fuse.Reactive.FuseJS.Maps();
+        var temp6 = new global::Fuse.Reactive.FuseJS.Phone();
+        var temp7 = new global::Fuse.Drawing.BrushConverter();
+        var temp8 = new global::Fuse.Triggers.BusyTaskModule();
+        var temp9 = new global::Fuse.Testing.UnoTestingHelper();
+        var temp10 = new global::Fuse.FileSystem.FileSystemModule();
+        var temp11 = new global::Fuse.Storage.StorageModule();
+        var temp12 = new global::Fuse.ImageTools.ImageTools();
+        var temp13 = new global::Fuse.WebSocket.WebSocketClientModule();
+        var temp14 = new global::Fuse.GeoLocation.GeoLocation();
+        var temp15 = new global::Polyfills.Window.WindowModule();
+        var temp16 = new global::FuseJS.Globals();
+        var temp17 = new global::FuseJS.Lifecycle();
+        var temp18 = new global::FuseJS.Environment();
+        var temp19 = new global::FuseJS.Base64();
+        var temp20 = new global::FuseJS.Bundle();
+        var temp21 = new global::FuseJS.FileReaderImpl();
+        var temp22 = new global::FuseJS.UserEvents();
+        var temp23 = new global::Fuse.iOS.StatusBarConfig();
+        var temp24 = new global::Fuse.Android.StatusBarConfig();
         router = new global::Fuse.Navigation.Router();
-        var temp21 = new global::Fuse.Controls.EdgeNavigator();
-        sidebar = new global::SidebarClass();
-        var temp22 = new global::Fuse.Controls.ClientPanel();
-        var temp23 = new global::Fuse.Controls.DockPanel();
-        var temp24 = new global::Fuse.Controls.Grid();
-        var temp25 = new global::Fuse.Controls.Panel();
-        var temp26 = new global::HamburgerMenu();
-        var temp27 = new global::Fuse.Gestures.Clicked();
-        var temp28 = new global::Fuse.Navigation.NavigateToggle();
-        var temp29 = new global::Fuse.Controls.Panel();
-        var temp30 = new global::Fuse.Controls.Text();
-        var temp31 = new global::Fuse.Controls.Navigator();
-        var home = new Template(this, this);
-        temp19.Style = Fuse.Platform.StatusBarStyle.Light;
-        temp20.Color = Fuse.Drawing.Colors.White;
+        var temp25 = new global::Fuse.Controls.Navigator();
+        var App = new Template(this, this);
+        temp23.Style = Fuse.Platform.StatusBarStyle.Light;
+        temp24.Color = Fuse.Drawing.Colors.Black;
         router.Name = __selector0;
-        temp21.Children.Add(sidebar);
-        temp21.Children.Add(temp22);
-        sidebar.Name = __selector1;
-        temp22.Color = float4(0.5450981f, 0f, 0.5450981f, 1f);
-        global::Fuse.Controls.DockPanel.SetDock(temp22, Fuse.Layouts.Dock.Top);
-        temp22.Children.Add(temp23);
-        temp23.Color = float4(1f, 1f, 1f, 1f);
-        temp23.Children.Add(temp24);
-        temp23.Children.Add(temp31);
-        temp24.Columns = "50,1*,50";
-        temp24.Color = float4(0.5450981f, 0f, 0.5450981f, 1f);
-        temp24.Width = new Uno.UX.Size(100f, Uno.UX.Unit.Percent);
-        temp24.Height = new Uno.UX.Size(50f, Uno.UX.Unit.Unspecified);
-        temp24.Padding = float4(0f, 0f, 0f, 10f);
-        global::Fuse.Controls.DockPanel.SetDock(temp24, Fuse.Layouts.Dock.Top);
-        temp24.Children.Add(temp25);
-        temp24.Children.Add(temp29);
-        temp25.Height = new Uno.UX.Size(50f, Uno.UX.Unit.Unspecified);
-        temp25.Children.Add(temp26);
-        temp26.Alignment = Fuse.Elements.Alignment.Left;
-        temp26.Children.Add(temp27);
-        temp27.Actions.Add(temp28);
-        temp28.Target = sidebar;
-        temp29.Width = new Uno.UX.Size(100f, Uno.UX.Unit.Percent);
-        temp29.Height = new Uno.UX.Size(50f, Uno.UX.Unit.Unspecified);
-        temp29.Children.Add(temp30);
-        temp30.Value = "\uF02A QRty";
-        temp30.FontSize = 30f;
-        temp30.TextAlignment = Fuse.Controls.TextAlignment.Center;
-        temp30.Color = Fuse.Drawing.Colors.White;
-        temp30.Alignment = Fuse.Elements.Alignment.Center;
-        temp30.Margin = float4(10f, 10f, 10f, 10f);
-        temp30.Font = global::MainView.FontAwesome;
-        temp31.DefaultPath = "home";
-        temp31.Templates.Add(home);
-        this.Children.Add(temp19);
-        this.Children.Add(temp20);
+        temp25.DefaultPath = "App";
+        temp25.Templates.Add(App);
+        this.Children.Add(temp23);
+        this.Children.Add(temp24);
         this.Children.Add(router);
-        this.Children.Add(temp21);
+        this.Children.Add(temp25);
     }
     static global::Uno.UX.Selector __selector0 = "router";
-    static global::Uno.UX.Selector __selector1 = "sidebar";
 }

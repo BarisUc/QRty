@@ -12,10 +12,10 @@ namespace Outracks.Simulator
 		public GeneratedApplication()
 			: base(
 				new [] 
-				{new Uno.Net.IPEndPoint(Uno.Net.IPAddress.Parse("127.0.0.1"), 12124), new Uno.Net.IPEndPoint(Uno.Net.IPAddress.Parse("192.168.12.108"), 12124)},"/Users/coskudemirhan/Google Drive/Projeler/dosyalar/QRty/QRCodeCreater.unoproj",new string[] 
+				{new Uno.Net.IPEndPoint(Uno.Net.IPAddress.Parse("127.0.0.1"), 12124), new Uno.Net.IPEndPoint(Uno.Net.IPAddress.Parse("10.0.17.186"), 12124)},"C:\\Users\\Baris\\Documents\\Fuse\\QRCodeCreater\\QRty.unoproj",new string[] 
 				{ })
 		{
-			Runtime.Bundle.Initialize("QRCodeCreater");
+			Runtime.Bundle.Initialize("QRty");
 
 			if defined(DotNet)
 				Reflection = new UnoHostReflection();

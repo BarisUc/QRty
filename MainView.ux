@@ -1,41 +1,51 @@
 <App>
 	<iOS.StatusBarConfig Style="Light" />
-	<Android.StatusBarConfig Color="White"/>
+	<Android.StatusBarConfig Color="Black"/>
 	<Font File="./Fonts/fontawesome-webfont.ttf" ux:Global="FontAwesome" />
 	<Router ux:Name="router" />
+	
+		<Navigator DefaultPath="App">
+			<Page ux:Class="AppPage">
+				<Router ux:Dependency="router" />
+				<JavaScript File="./Components/router.js" />
 
-		<NativeViewHost>
-			<EdgeNavigator>
+				<NativeViewHost>
+					<EdgeNavigator ux:Name="EdgeNavigator">
 
-				<SidebarClass ux:Name="sidebar" />
-					<ClientPanel Dock="Top" Color="#8b008b">
+						<SidebarClass ux:Name="sidebar" />
+							<ClientPanel Dock="Top" Color="#8b008b">
 
-						<DockPanel Color="#ffffff">
+								<DockPanel Color="#ffffff">
 
-			                    <Grid Columns="50,1*,50" Dock="Top" Width="100%" Height="50" Padding="0,0,0,10" Color="#8b008b">
+					                    <Grid Columns="50,1*,50" Dock="Top" Width="100%" Height="50" Padding="0,0,0,10" Color="#8b008b">
 
-			                            <Panel Height="50">
-			                                <HamburgerMenu Alignment="Left">
-			                                    <Clicked>
-			                                        <NavigateToggle Target="sidebar" />
-			                                    </Clicked>
-			                                </HamburgerMenu>
-			                            </Panel>
+					                            <Panel Height="50">
+					                                <HamburgerMenu Alignment="Left">
+					                                    <Clicked>
+					                                        <NavigateToggle Target="sidebar" />
+					                                    </Clicked>
+					                                </HamburgerMenu>
+					                            </Panel>
 
-			                            <Panel Width="100%" Height="50">
-			                                <Text Font="FontAwesome" Color="White" FontSize="30" TextAlignment="Center" Margin="10" Alignment="Center"> &#xf02a; QRty </Text>
-			                            </Panel>
-			                    </Grid>
+					                            <Panel Width="100%" Height="50">
+					                                <Text Font="FontAwesome" Color="White" FontSize="30" TextAlignment="Center" Margin="10" Alignment="Center"> &#xf02a; QRty </Text>
+					                            </Panel>
+					                    </Grid>
 
 
-								<Navigator DefaultPath="home">
-									<HomePage ux:Template="home" router="router" />
-								</Navigator>
-						</DockPanel>
-					</ClientPanel>
+										<Navigator DefaultPath="home">
+											<MainPage ux:Template="home" router="router" />
+											<ScanPage ux:Template="scanpage" router="router" />
+										</Navigator>
+								</DockPanel>
+							</ClientPanel>
 
-			</EdgeNavigator>
-		</NativeViewHost>
+					</EdgeNavigator>
+				</NativeViewHost>
+			</Page>
+
+			<AppPage ux:Template="App" router="router" />
+		</Navigator>
 
 	
 </App>
